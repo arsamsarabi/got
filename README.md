@@ -23,6 +23,18 @@ brew install go gum
 chmod +x got.sh
 ```
 
+3. Add an alias to your `.bashrc` or `.zshrc` file:
+
+```shell
+alias got="got.sh"
+```
+
+4. Source your `.bashrc` or `.zshrc` file:
+
+```shell
+source ~/.bashrc
+```
+
 ## Usage
 
 ```shell
@@ -35,6 +47,7 @@ If you have any feature suggestion, do let me know. You can open an issue in the
 
 ## Roadmap
 
+- create a Homebrew formula for this app
 - Enable emojis in commit messages
   - control the emoji using an environment variable
 - ..
