@@ -28,3 +28,13 @@ chmod +x got.sh
 ```shell
 got
 ```
+
+## Feature suggestions
+
+If you have any feature suggestion, do let me know. You can open an issue in the GitHub repo or drop me an email.
+
+## Roadmap
+
+- Enable emojis in commit messages
+  - control the emoji using an environment variable
+- ..
