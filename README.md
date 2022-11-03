@@ -6,6 +6,9 @@ Built using [gum](https://github.com/charmbracelet/gum)
 ## Installation
 
 1. Clone this repo or download the `got.sh` file and place it in your `$PATH`.
+
+   > On mac: `/usr/local/bin`
+
 2. Make it executable:
 
 ```shell
