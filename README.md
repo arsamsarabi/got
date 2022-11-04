@@ -1,7 +1,6 @@
 # got
 
-A simple bash script to simplify the process of creating a new git commit.
-Built using [gum](https://github.com/charmbracelet/gum)
+An opinionated cli tool for assisting with git related activities 🤓
 
 ## Prerequisites
 
