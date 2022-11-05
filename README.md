@@ -44,11 +44,11 @@ got
 
 #### Create a new branch
 
-![]('./../assets/new_branch.gif')
+<img src="./assets/new_branch.gif" />
 
 #### Commit changes
 
-![]('./../assets/commit.gif')
+<img src="./assets/commit.gif" />
 
 ## Feature suggestions
 
