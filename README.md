@@ -40,7 +40,7 @@ source ~/.bashrc
 got
 ```
 
-### Demos
+### Demo
 
 #### Create a new branch
 
