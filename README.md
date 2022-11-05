@@ -44,11 +44,11 @@ got
 
 #### Create a new branch
 
-<img src="./assets/new_branch.gif" />
+<img src="./assets/new_branch.gif" width="500px" />
 
 #### Commit changes
 
-<img src="./assets/commit.gif" />
+<img src="./assets/commit.gif" width="500px" />
 
 ## Feature suggestions
 
