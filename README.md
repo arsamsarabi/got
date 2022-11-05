@@ -40,6 +40,16 @@ source ~/.bashrc
 got
 ```
 
+### Demos
+
+#### Create a new branch
+
+![]('./../assets/new_branch.gif')
+
+#### Commit changes
+
+![]('./../assets/commit.gif')
+
 ## Feature suggestions
 
 If you have any feature suggestion, do let me know. You can open an issue in the GitHub repo or drop me an email.

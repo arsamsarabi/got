@@ -7,7 +7,7 @@ function handle_branch {
   gum style \
     --foreground 8 --align left --margin "1 0" \
     'What is the type of change that you want to implement in this branch?:'
-  CATEGORY=$(gum choose "fix" "feature" "docs" "tests" "chore" "revert" "ci" "release" "other")
+  CATEGORY=$(gum choose "fix" "feature" "docs" "tests" "chore" "revert" "ci" "release" "demo" "other")
 
   clear 
   gum style \
