@@ -5,19 +5,19 @@
 function handle_branch {
   clear 
   gum style \
-    --foreground 8 --align left --margin "1 0" \
+    --foreground 225 --align left --margin "1 0" \
     'What is the type of change that you want to implement in this branch?:'
   CATEGORY=$(gum choose "fix" "feature" "docs" "tests" "chore" "revert" "ci" "release" "demo" "other")
 
   clear 
   gum style \
-    --foreground 8 --align left --margin "1 0" \
+    --foreground 225 --align left --margin "1 0" \
     'Do you have a ticket number for the work?:'
   TICKET_NUMBER=$(gum input --placeholder "e.g. TRF-123")
 
   clear 
   gum style \
-    --foreground 8 --align left --margin "1 0" \
+    --foreground 225 --align left --margin "1 0" \
     'Finally, give your branch a name:'  
   BRANCH_NAME=$(gum input --placeholder "e.g. awesome new user journey feature")
 
@@ -40,13 +40,13 @@ function handle_branch {
 function do_commit {
   clear
   gum style \
-    --foreground 8 --align left --margin "1 0" \
+    --foreground 225 --align left --margin "1 0" \
     'What is the type of change that you want to commit?:'
   COMMIT_OPT_TYPE=$(gum choose "fix" "feat" "docs" "style" "refactor" "perf" "test" "chore" "revert" "build" "ci" "release" "other")
 
   clear
   gum style \
-    --foreground 8 --align left --margin "1 0" \
+    --foreground 225 --align left --margin "1 0" \
     'What is the scope of this commit?:'
   SCOPE=$(gum input --placeholder "scope")
 
@@ -54,13 +54,13 @@ function do_commit {
 
   clear
   gum style \
-    --foreground 8 --align left --margin "1 0" \
+    --foreground 225 --align left --margin "1 0" \
     'Write a summary for this commit (72 characters max):'
   SUMMARY=$(gum input --value "$COMMIT_OPT_TYPE$SCOPE: " --placeholder "Summary of this change")
 
   clear
   gum style \
-    --foreground 8 --align left --margin "1 0" \
+    --foreground 225 --align left --margin "1 0" \
     'Write a more comprehensive description of these changes (multi-line):'  
   DESCRIPTION=$(gum write --placeholder "Details of this change (control+D to finish)")
 
@@ -69,7 +69,7 @@ function do_commit {
 
 function handle_commit {
   gum style \
-    --foreground 8 --align left --margin "1 0" \
+    --foreground 225 --align left --margin "1 0" \
     'Have you staged your changes?:'
 
   ACTIONS=$(gum choose "Yes!" "No, stage all changes for me" "No, let me stage my changes first")
@@ -91,14 +91,14 @@ function handle_commit {
 
 function welcome_message {
   gum style \
-    --foreground 4 --border-foreground 6 --border rounded \
+    --background 67 --foreground 117  \
     --align center --width 50 --margin "2 2" --padding "1 1" \
     'got the Git assistant.' '' 'Arsam Sarabi - arsamsarabi@me.com'
 }
 
 function get_operation_choice {
   gum style \
-    --foreground 8 --align left --margin "1 0" \
+    --foreground 225 --align left --margin "1 0" \
     'Choose from the following functions:'
 
   ACTIONS=$(gum choose "New branch" "Commit" "Quit")
