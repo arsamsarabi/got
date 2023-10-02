@@ -1,9 +1,9 @@
 #!/bin/sh
 
-. "src/utilities.sh"
-. "src/branch.sh"
-. "src/commit.sh"
-. "src/rebase.sh"
+source ~/.got/utilities.sh
+source ~/.got/branch.sh
+source ~/.got/commit.sh
+source ~/.got/rebase.sh
 
 function main {
   clear
