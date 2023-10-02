@@ -86,7 +86,23 @@ function handle_commit {
       exit 0
       ;;
   esac 
+}
 
+function handle_rebase {
+  gum style \
+    --foreground 225 --align left --margin "1 0" \
+    'Rebasing on top of origin or upstream?:'
+
+  ACTIONS=$(gum choose "Origin" "Upstream")
+
+  case $ACTIONS in
+    "Origin")
+      git checkout main && git fetch origin main && git rebase origin/main -i
+      ;;
+    "Upstream")
+      git checkout main && git fetch upstream main && git rebase upstream/main -i
+      ;;
+  esac 
 }
 
 function welcome_message {
@@ -109,6 +125,9 @@ function get_operation_choice {
       ;;
     "Commit")
       handle_commit
+      ;;
+    "Rebase")
+      handle_rebase
       ;;
     "Quit")
       exit 0
