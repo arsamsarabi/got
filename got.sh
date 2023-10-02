@@ -117,7 +117,7 @@ function get_operation_choice {
     --foreground 225 --align left --margin "1 0" \
     'Choose from the following functions:'
 
-  ACTIONS=$(gum choose "New branch" "Commit" "Quit")
+  ACTIONS=$(gum choose "New branch" "Commit" "Rebase" "Quit")
 
   case $ACTIONS in
     "New branch")
