@@ -4,8 +4,8 @@ An opinionated cli tool for assisting with git related activities 🤓
 
 ## Installation
 
->❗️Important
-> "Got" has currently only been tested on Mac OS. If you are using a different OS, please let me know if you face any issues.
+>❗️Important\
+> `got` has currently only been tested on Mac OS. If you are using a different OS, please let me know if you face any issues.
 
 1. Clone this repo
 2. Open a terminal at the root of this project and run `make`:
