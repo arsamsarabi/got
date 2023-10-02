@@ -2,51 +2,39 @@
 
 An opinionated cli tool for assisting with git related activities 🤓
 
-## Prerequisites
-
-You need to have `Go` and `Gum` installed on your mac.
-
-```shell
-brew install go gum
-```
-
 ## Installation
 
-1. Clone this repo or download the `got.sh` file and place it in your `$PATH`.
+>❗️Important
+> "Got" has currently only been tested on Mac OS. If you are using a different OS, please let me know if you face any issues.
 
-   > On mac: `/usr/local/bin`
-
-2. Make it executable:
-
-```shell
-chmod +x got.sh
-```
-
-3. Add an alias to your `.bashrc` or `.zshrc` file:
+1. Clone this repo
+2. Open a terminal at the root of this project and run `make`:
 
 ```shell
-alias got="got.sh"
-```
-
-4. Source your `.bashrc` or `.zshrc` file:
-
-```shell
-source ~/.bashrc
+make
 ```
 
 ## Usage
+
+In your github repository run `got`:
 
 ```shell
 got
 ```
 
-### Demo
+### available operations
 
-#### Create a new branch
+- Create a new branch
+- Commit changes
+- Rebase with main
+
+## Demo
+
+### Create a new branch
 
 <img src="./assets/new_branch.gif" width="500px" />
 
-#### Commit changes
+### Commit changes
 
 <img src="./assets/commit.gif" width="500px" />
 
