@@ -26,6 +26,7 @@ add_alias:
 	echo "alias got='got'" >> ~/.zshrc
 	echo "alias got='got'" >> ~/.bashrc
 	echo "alias got='got'" >> ~/.bash_profile
+	source ~/.zshrc && source ~/.bashrc && source ~/.bash_profile
 
 finish_message:
 	echo "🎉 Done! Run 'got' to get started."
