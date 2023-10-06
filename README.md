@@ -2,6 +2,11 @@
 
 An opinionated cli tool for assisting with git related activities 🤓
 
+## Prerequisites
+
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [brew](https://brew.sh/)
+
 ## Installation
 
 >❗️Important\
@@ -11,7 +16,7 @@ An opinionated cli tool for assisting with git related activities 🤓
 2. Open a terminal at the root of this project and run `make`:
 
 ```shell
-make
+  make -s
 ```
 
 ## Usage
@@ -19,7 +24,7 @@ make
 In your github repository run `got`:
 
 ```shell
-got
+  got
 ```
 
 ### available operations

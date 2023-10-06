@@ -1,3 +1,10 @@
+function do_stage {
+  echo "Staging changes..."
+  if [ -z "$(git status -s -uno | grep -v '^ ' | awk '{print $2}')" ]; then
+    gum confirm "Stage all?" && git add .
+  fi
+}
+
 function do_commit {
   clear
   gum style \
@@ -25,27 +32,30 @@ function do_commit {
     'Write a more comprehensive description of these changes (multi-line):'  
   DESCRIPTION=$(gum write --placeholder "Details of this change (control+D to finish)")
 
-  gum confirm "Commit changes?" && git commit -m "$SUMMARY" -m "$DESCRIPTION"
-}
-
-function handle_commit {
+  clear
   gum style \
     --foreground 225 --align left --margin "1 0" \
-    'Have you staged your changes?:'
-
-  ACTIONS=$(gum choose "Yes!" "No, stage all changes for me" "No, let me stage my changes first")
+    'Commit changes?:'
+  ACTIONS=$(gum choose "Yes - commit only" "Yes - commit & push" "No - abort commit")
 
   case $ACTIONS in
-    "Yes!")
-      do_commit
+    "Yes - commit only")
+      git commit -m "$SUMMARY" -m "$DESCRIPTION"
       ;;
-    "No, stage all changes for me")
-      git add .
-      do_commit
+    "Yes - commit & push")
+      git commit -m "$SUMMARY" -m "$DESCRIPTION"
+      git push
       ;;
-    "No, let me stage my changes first")
+    "No - abort commit")
       exit 0
       ;;
   esac 
+}
+
+function handle_commit {
+  echo "Committing changes..."
+  clear
+  do_stage
+  gum confirm "Commit changes?" && do_commit
 }
 

@@ -1,3 +1,8 @@
+function do_rebase {
+  git fetch $1 main && git rebase $1/main -i
+  gum confirm "Push to origin?" && git push -f
+}
+
 function handle_rebase {
   gum style \
     --foreground 225 --align left --margin "1 0" \
@@ -7,10 +12,10 @@ function handle_rebase {
 
   case $ACTIONS in
     "Origin")
-      git fetch origin main && git rebase origin/main -i
+      do_rebase origin
       ;;
     "Upstream")
-      git fetch upstream main && git rebase upstream/main -i
+      do_rebase upstream
       ;;
   esac 
 }

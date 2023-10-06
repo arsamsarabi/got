@@ -13,19 +13,19 @@ function main {
     --foreground 225 --align left --margin "1 0" \
     'Choose from the following functions:'
 
-  ACTIONS=$(gum choose "New branch" "Commit" "Rebase" "Quit")
+  ACTIONS=$(gum choose "🌱 New branch" "📝 Commit" "🔥 Rebase" "🚪 Quit")
 
   case $ACTIONS in
-    "New branch")
+    "🌱 New branch")
       handle_branch
       ;;
-    "Commit")
+    "📝 Commit")
       handle_commit
       ;;
-    "Rebase")
+    "🔥 Rebase")
       handle_rebase
       ;;
-    "Quit")
+    "🚪 Quit")
       exit 0
       ;;
   esac 
