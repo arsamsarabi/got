@@ -1,6 +1,5 @@
 GOT_MENU_BG_COLOUR=189
 GOT_MENU_FG_COLOUR=54
-GOT_MENU_WIDTH=100
 
 function ask {
   gum style \
@@ -18,7 +17,7 @@ function welcome_message {
   clear
   gum style \
     --background $GOT_MENU_BG_COLOUR --foreground $GOT_MENU_FG_COLOUR --bold  \
-    --align center --width $GOT_MENU_WIDTH --margin "1 2 0 2" --padding "1 1" \
+    --align center --margin "1 2 0 2" --padding "1 1" \
     'got the Git assistant.' '' 'Arsam Sarabi - arsamsarabi@me.com'
 }
 
@@ -26,14 +25,14 @@ function no_git_message {
   clear
   gum style \
     --background 52 --foreground 225 \
-    --bold --align center --width $GOT_MENU_WIDTH --margin "0 2" --padding "1 1" \
+    --bold --align center --margin "0 2" --padding "1 1" \
     '🚨 404 - Git not found. 🚨' '' 'Make sure you are in the root folder of a git repository and try again.'
 }
 
 function status_bar {
   gum style \
     --background $GOT_MENU_BG_COLOUR --foreground $GOT_MENU_FG_COLOUR \
-    --width $GOT_MENU_WIDTH --margin "1 2" --padding "1" --bold \
+   --margin "1 2" --padding "1" --bold \
     "$APP_STATUS | 🌱: $CURRENT_GIT_BRANCH"
 }
 
