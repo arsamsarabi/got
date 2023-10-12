@@ -5,14 +5,16 @@ function log {
   fi
 }
 
-function pretty_print {
+function ask {
   gum style \
-    --foreground 225 --align left --margin "1 0" \
+    --foreground 61 --align left --margin "0.75 2" \
+    "$1"
+}
+
+function tell {
+  gum style \
+    --foreground 189 --align left --margin "0.75 2" \
     "$1"
   log "$1"
 }
 
-function print_header {
-  clear
-  cat ./assets/got.txt | lolcat
-}

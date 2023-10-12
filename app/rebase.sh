@@ -4,11 +4,17 @@ function do_rebase {
 }
 
 function handle_rebase {
-  gum style \
-    --foreground 225 --align left --margin "1 0" \
-    'Rebasing on top of origin or upstream?:'
+  # SETUP
+  # ------------------------------
+  APP_STATUS="🔄 Rebase menu"
+  clear
+  status_bar
 
-  ACTIONS=$(gum choose "Origin" "Upstream")
+  # CHOOSE ACTION
+  # ------------------------------
+  ask "Rebasing on top of origin or upstream?:"
+  local ACTIONS=$(gum choose "Origin" "Upstream")
+  tell "Rebasing on top of $ACTIONS"
 
   case $ACTIONS in
     "Origin")

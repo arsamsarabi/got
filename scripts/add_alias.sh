@@ -1,37 +1,39 @@
+GOT_FILE_NAME=""
+GOT_DOTFILE_PATH=""
+GOT_ALIAS_NAME=""
+GOT_ALIAS_LINE=""
+
 function choose_dotfile {
-  pretty_print "📁 Choose the dotfile you use for aliases:"
-  FILE_PATH=$(gum file $HOME --all)
-  log "Dotfile chosen: $FILE_PATH"
-  sleep 1
+  ask "📁 Choose the dotfile you use for aliases (located under $HOME):"
+  GOT_FILE_NAME=$(gum input --placeholder ".zshrc" --header "Dotfile path defaults to .zshrc" --value ".zshrc")
+  GOT_DOTFILE_PATH="$HOME/$GOT_FILE_NAME"
+  tell "Dotfile got: $GOT_FILE_NAME"
+  tell "Dotfile path: $GOT_DOTFILE_PATH"
 }
 
 function choose_alias_name {
-  pretty_print "🚀 Choose the alias name for got (defaults to got):"
-  ALIAS_NAME=$(gum input --value "got" --header "Alias name")
-  log "Alias name chosen: $ALIAS_NAME"
-  sleep 1
+  ask "🚀 Choose the alias name for got (defaults to got):"
+  GOT_ALIAS_NAME=$(gum input --value "got" --header "Alias name")
+  tell "Alias name got: $GOT_ALIAS_NAME"
 }
 
 function add_alias_to_dotfile {
-  ALIAS_LINE="alias $ALIAS_NAME='~/.got/got.sh'"
-  pretty_print "📝 Adding alias $ALIAS_NAME to $FILE_PATH ..."
+  GOT_ALIAS_LINE="alias $GOT_ALIAS_NAME='~/.got/got.sh'"
+  log "📝 Adding alias $GOT_ALIAS_NAME to $GOT_FILE_NAME ..."
   
-  if awk -v text="$ALIAS_LINE" '$0 == text { found = 1; exit } END { exit !found }' $FILE_PATH; then
-    pretty_print "🚨 $ALIAS_LINE already exists in $FILE_PATH."
+  if awk -v text="$GOT_ALIAS_LINE" '$0 == text { found = 1; exit } END { exit !found }' $GOT_DOTFILE_PATH; then
+    log "🚨 $GOT_ALIAS_LINE already exists in $GOT_FILE_NAME."
   else
-    echo "" >> $FILE_PATH
-    echo "# -------------------------" >> $FILE_PATH
-    echo "# GOT ---------------------" >> $FILE_PATH
-    echo "alias $ALIAS_NAME='~/.got/got.sh'" >> $FILE_PATH
-    echo "# -------------------------" >> $FILE_PATH
+    echo "" >> $GOT_FILE_NAME
+    echo "# --------------------------------" >> $GOT_FILE_NAME
+    echo "# GOT ----------------------------" >> $GOT_FILE_NAME
+    echo "alias $GOT_ALIAS_NAME='~/.got/got.sh'" >> $GOT_FILE_NAME
+    echo "# --------------------------------" >> $GOT_FILE_NAME
   fi
-
-  sleep 1
 }
 
 
 function add_alias {
-  print_header
   choose_dotfile
   choose_alias_name
   add_alias_to_dotfile
