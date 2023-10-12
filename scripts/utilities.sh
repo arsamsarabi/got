@@ -8,13 +8,13 @@ function log {
 function ask {
   gum style \
     --foreground 61 --align left --margin "0.75 2" \
-    "$1"
+    "? > $1"
 }
 
 function tell {
   gum style \
     --foreground 189 --align left --margin "0.75 2" \
-    "$1"
-  log "$1"
+    "! > $1"
+  log "! > $1"
 }
 
