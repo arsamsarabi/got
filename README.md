@@ -50,8 +50,8 @@ If you have any feature suggestion, do let me know. You can open an issue in the
 
 ## Roadmap
 
-- create a Homebrew formula for this app
+- Create a Homebrew formula for this app
 - Enable emojis in commit messages
-  - control the emoji using an environment variable
+  - Control the emoji using an environment variable
 - Add option flags to enable/disable certain features
 - Add `gh` cli integration
