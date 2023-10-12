@@ -10,7 +10,7 @@ An opinionated cli tool for assisting with git related activities 🤓
 ## Installation
 
 >❗️Important\
-> `got` has currently only been tested on Mac OS. If you are using a different OS, please let me know if you face any issues.
+> `got` has only been developed and tested on MacOS. If you are using a different OS, please let me know if you face any issues.
 
 1. Clone this repo
 2. Open a terminal at the root of this project and run `make`:
@@ -32,6 +32,7 @@ In your github repository run `got`:
 - Create a new branch
 - Commit changes
 - Rebase with main
+- and more..
 
 ## Demo
 
@@ -52,4 +53,5 @@ If you have any feature suggestion, do let me know. You can open an issue in the
 - create a Homebrew formula for this app
 - Enable emojis in commit messages
   - control the emoji using an environment variable
-- ..
+- Add option flags to enable/disable certain features
+- Add `gh` cli integration
