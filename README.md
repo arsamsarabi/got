@@ -9,7 +9,7 @@ An opinionated cli tool for assisting with git related activities 🤓
 
 ## Installation
 
->❗️Important\
+>❗️Important
 > `got` has only been developed and tested on MacOS. If you are using a different OS, please let me know if you face any issues.
 
 1. Clone this repo
@@ -17,6 +17,12 @@ An opinionated cli tool for assisting with git related activities 🤓
 
 ```shell
   make -s
+```
+
+> If you added an alias don't forget to source the `dotfile`:
+
+```shell
+  source ~/{SOME_PATH}/.zshrc
 ```
 
 ## Usage

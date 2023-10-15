@@ -24,11 +24,11 @@ function add_alias_to_dotfile {
   if awk -v text="$GOT_ALIAS_LINE" '$0 == text { found = 1; exit } END { exit !found }' $GOT_DOTFILE_PATH; then
     log "🚨 $GOT_ALIAS_LINE already exists in $GOT_FILE_NAME."
   else
-    echo "" >> $GOT_FILE_NAME
-    echo "# --------------------------------" >> $GOT_FILE_NAME
-    echo "# GOT ----------------------------" >> $GOT_FILE_NAME
-    echo "alias $GOT_ALIAS_NAME='~/.got/got.sh'" >> $GOT_FILE_NAME
-    echo "# --------------------------------" >> $GOT_FILE_NAME
+    echo "" >> $GOT_DOTFILE_PATH
+    echo "# --------------------------------" >> $GOT_DOTFILE_PATH
+    echo "# GOT ----------------------------" >> $GOT_DOTFILE_PATH
+    echo "alias $GOT_ALIAS_NAME='~/.got/got.sh'" >> $GOT_DOTFILE_PATH
+    echo "# --------------------------------" >> $GOT_DOTFILE_PATH
   fi
 }
 
